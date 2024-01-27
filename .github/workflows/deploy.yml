@@ -22,12 +22,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "echo '${{ secrets.SSH_PRIVATE_KEY }}' > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && ssh-keyscan github.com > ~/.ssh/known_hosts"
+          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "echo 123"
 
-      - name: Deploy to server
-        run: |
-          scp -o "StrictHostKeyChecking=no" .github/deploy.sh admin@108.61.250.9:/tmp/
-          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "bash /tmp/deploy.sh"
+#      - name: Deploy to server
+#        run: |
+#          scp -o "StrictHostKeyChecking=no" .github/deploy.sh admin@108.61.250.9:/tmp/
+#          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "bash /tmp/deploy.sh"
 
 #      - name: Install node dependencies
 #        run: |
