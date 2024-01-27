@@ -1,0 +1,17 @@
+# Configuration
+wp-config.php
+
+# Themes
+/wp-content/themes/twenty*/
+/wp-content/themes/cambosino/style.css
+/wp-content/themes/cambosino/style-rtl.css
+/wp-content/themes/cambosino/node_modules
+
+# Example plugin
+/wp-content/plugins/hello.php
+
+# Uploads
+/wp-content/uploads/
+
+# Log files
+*.log
