@@ -22,13 +22,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "echo 123"
+          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "echo '${{ secrets.SSH_PRIVATE_KEY }}' > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa && ssh-keyscan github.com > ~/.ssh/known_hosts"
 
-#      - name: Deploy to server
-#        run: |
-#          scp -o "StrictHostKeyChecking=no" .github/deploy.sh admin@108.61.250.9:/tmp/
-#          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "bash /tmp/deploy.sh"
+      - name: Deploy to server
+        run: |
+          scp -o "StrictHostKeyChecking=no" .github/deploy.sh admin@108.61.250.9:/tmp/
+          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "bash /tmp/deploy.sh"
 
-#      - name: Install node dependencies
-#        run: |
-#          ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "cd /home/admin/web/cambosino.com/public_html/wp-content/themes/cambosino && yarn install --frozen-lockfile && yarn run compile:css"
+      - name: Install node dependencies
+        run: ssh -o "StrictHostKeyChecking=no" admin@108.61.250.9 "cd /home/admin/web/cambosino.com/public_html/wp-content/themes/cambosino && yarn install --frozen-lockfile && yarn run compile:css"

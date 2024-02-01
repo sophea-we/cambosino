@@ -1,0 +1,114 @@
+.widget-area {
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 0 0 7px 0;
+    }
+
+    a {
+        color: $gray-800;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $primary;
+        }
+    }
+
+    .widget {
+        background-color: $blue-light;
+        padding: 20px 25px;
+        margin: 0 0 30px 0;
+
+        @include transition( 0.3s box-shadow ease-out, 0.3s -webkit-box-shadow ease-out );
+
+        &:hover,
+        &:focus,
+        &:active {
+            @include box-shadow( 0 2px 6px 2px rgba(0, 0, 0, 0.05) );
+        }
+
+        &_search {
+            label {
+                width: 100%;
+            }
+
+            .screen-reader-text {
+                display: block;
+                padding: 0 0 $spacer 0;
+            }
+
+            .search-field,
+            .search-submit {
+                padding: $input-btn-padding-y $input-btn-padding-x;
+            }
+
+            .search-field {
+                border: 1px solid $gray-200;
+                width: 100%;
+            }
+
+            .search-submit {
+                background-color: $primary;
+                border: 0 none;
+                color: $white;
+
+                @include border-radius( 4px );
+            }
+        }
+
+        &-title {
+            border-bottom: 1px solid darken( $blue-light, 5% );
+            color: $black;
+            font-size: 18px;
+            padding: 0 0 15px 0;
+        }
+
+        &-footer {
+            border-top: 1px solid $gray-400;
+            padding-top: 15px;
+            margin-top: 15px;
+
+            .btn {
+                color: $white;
+            }
+        }
+
+        &_categories,
+        &_recent_entries {
+            li {
+                border-bottom: 1px solid darken( $blue-light, 5% );
+                display: block;
+                padding: 10px 0;
+
+                &:last-child {
+                    border-bottom: 0 none;
+                }
+            }
+        }
+
+        &_tags {
+            li {
+                display: inline-block;
+                margin: 10px 5px 0 0;
+            }
+
+            a {
+                background-color: darken( $white, 15% );
+                color: $white;
+                display: block;
+                font-size: 13px;
+                padding: 5px 9px;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

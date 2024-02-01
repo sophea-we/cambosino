@@ -1,0 +1,52 @@
+.main-content {
+  &-header-area {
+    background-color: $blue-light;
+    padding: $spacer 0;
+
+    .entry-title {
+      font-size: 1.625rem;
+    }
+  }
+
+  &-content-area {
+    @include section-wrapper();
+
+    .section-title {
+      margin: 0 0 15px 0;
+      position: relative;
+      padding: 0 0 15px 0;
+
+      &:after {
+        content: '';
+        background-color: $red;
+        display: inline-block;
+        height: 4px;
+        width: 64px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        @include border-radius( 4px );
+      }
+    }
+
+    &.mission-vision-section {
+      background: url( '../../assets/images/dot-bg.png' ) repeat center center $primary;
+      color: $white;
+    }
+  }
+}
+
+.section-wrapper {
+  @include section-wrapper();
+}
+
+@include media-breakpoint-up(lg) {
+  .main-content {
+    &-header-area {
+      #breadcrumbs {
+        margin-top: 48px;
+      }
+    }
+  }
+}

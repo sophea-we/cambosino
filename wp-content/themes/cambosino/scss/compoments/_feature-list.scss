@@ -1,0 +1,31 @@
+.feature {
+  &-list {
+    &-item {
+      margin: 0 0 15px 0;
+
+      &:after {
+        margin: 0;
+      }
+    }
+
+    &-icon {
+      margin: 0 15px 0 0;
+      text-align: center;
+      line-height: 64px;
+      height: 64px;
+      width: 64px;
+
+      @include border-radius( 50% );
+      @include box-shadow( 0px 6px 15px rgba(16, 110, 234, 0.12 ) );
+    }
+
+    &-content {
+      margin: 20px 0 0 0;
+      width: calc( 100% - 79px );
+
+      ul {
+        padding: 0 0 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.slidein-menu {
+    background-color: $primary;
+    overflow: auto;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100vh;
+    width: 300px;
+    z-index: 9999;
+
+    @include transition( all .5s );
+    @include box-shadow( 1px 0 1px 0 rgba( 0, 0, 0, 0.1 ) );
+    @include transition-timing-function( cubic-bezier( 0.2, 0, 0.3, 1 ) );
+
+    &-backdrop {
+        background-color: rgba( 0, 0, 0, 0.8 );
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 0;
+
+        @include transition( all .5s );
+
+        &.show {
+            display: block;
+            opacity: 1;
+            z-index: 998;
+        }
+    }
+
+    &.show {
+        display: block;
+        left: 0;
+    }
+
+    &-head,
+    &-body {
+        text-align: center;
+    }
+
+    &-head {
+        .navbar-brand {
+            color: $white;
+            margin: 0;
+        }
+
+        .custom-logo-link {
+            .custom-logo {
+                border-radius: 6px;
+                height: auto;
+                width: 100px;
+            }
+        }
+    }
+
+    &-body {
+        margin: 25px 0 0 0;
+    }
+
+    &-nav {
+        padding: 20px 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            border-top: 1px dotted #f8f9fa;
+
+            a {
+                color: $white;
+                display: block;
+                padding: .5rem 0;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: darken( $white, 15% );
+                }
+            }
+        }
+    }
+
+    &-btn-close {
+        color: $white;
+        font-size: 24px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: darken( $white, 15% );
+        }
+    }
+}

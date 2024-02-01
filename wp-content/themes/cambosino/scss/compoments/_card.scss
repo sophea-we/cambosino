@@ -1,0 +1,12 @@
+.card {
+  &-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &-text {
+    height: 72px;
+    overflow: hidden;
+  }
+}

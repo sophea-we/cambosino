@@ -1,0 +1,37 @@
+.icon-box {
+  &-item {
+    background-color: $white;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    @include box-shadow( 0px 0px 35px 2px rgba(0, 0, 0, 0.09) );
+    @include border-radius( 10px );
+  }
+
+  &-icon,
+  &-heading {
+    margin: 0 0 15px 0;
+  }
+
+  &-heading {
+    line-height: normal;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+}
+
+@include media-breakpoint-up(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+
+}

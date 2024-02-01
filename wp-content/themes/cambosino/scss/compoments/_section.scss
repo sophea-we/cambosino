@@ -1,0 +1,46 @@
+.section {
+  &-wrapper {
+    @include section-wrapper();
+  }
+
+  &-highlight {
+    background-color: $blue-light;
+  }
+
+  &-header {
+    padding: 0 0 30px 0;
+
+    &-center {
+      text-align: center;
+
+      .section-heading {
+        &:after {
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  &-heading {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    position: relative;
+
+    &:after {
+      content: '';
+      background-color: $red;
+      display: inline-block;
+      height: 4px;
+      width: 64px;
+      position: absolute;
+      bottom: 0;
+      border-radius: 4px;
+    }
+  }
+
+  &-tagline {
+    margin: 0;
+  }
+}

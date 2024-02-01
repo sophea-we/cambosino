@@ -1,0 +1,16 @@
+.wpforms {
+  &-submit {
+    background-color: $primary !important;
+    border: 0 none !important;
+    color: $white !important;
+
+    @include border-radius( 4px !important );
+  }
+}
+
+.btn {
+  &-primary {
+    background: $primary;
+    border-color: $primary;
+  }
+}

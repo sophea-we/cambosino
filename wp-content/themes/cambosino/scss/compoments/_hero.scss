@@ -1,0 +1,47 @@
+.hero {
+  &.slick-dotted {
+    margin: 0;
+  }
+
+  .slick-dots {
+    bottom: 6px;
+  }
+
+  &-intro {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+
+  &-item {
+    height: 280px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .hero {
+    &-item {
+      height: 320px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .hero {
+    &-item {
+      height: 420px;
+    }
+
+    &-intro {
+      max-width: 65%;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hero {
+    &-item {
+      height: calc(100vh - 248px);
+    }
+  }
+}
